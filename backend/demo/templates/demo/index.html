@@ -1,0 +1,9 @@
+{% if clients %}
+    <div class="clients-container">
+    {% for client in clients %}
+        <div class="client"><a href="{% url 'demo:detail' client.id%}">{{ client.name }}</a></div>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>No clients are available.</p>
+{% endif %}

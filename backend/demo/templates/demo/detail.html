@@ -1,0 +1,22 @@
+<h1>{{ client.name }}</h1>
+
+{% if funds %}
+<table class="client-fund-table">
+  <thead>
+    <td>Fund Name</td>
+    <td>Type</td>
+    <td>Inception Date</td>
+    <td>Description</td>
+  </thead>
+  {% for fund in funds %}
+  <tr class="client-fund">
+    <td>{{fund.name}}</td>
+    <td>{{fund.type_field}}</td>
+    <td>{{fund.inception_date}}</td>
+    <td>{{fund.description}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+  <p>No funds exist.</p>
+{% endif %}
